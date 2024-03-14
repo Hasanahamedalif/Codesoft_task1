@@ -1,0 +1,28 @@
+import re
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+
+    greetings_patterns = ["hello", "hi", "hey", "greetings"]
+    inquiries_patterns = ["how are you", "what's up", "tell me more", "how do you do","how about my today task?"]
+    farewells_patterns = ["bye", "goodbye", "see you", "farewell","thanks buddy"]
+
+    if any(pattern in user_input for pattern in greetings_patterns):
+        return "Hello! buddy tell me what can i do for you?"
+
+    elif any(pattern in user_input for pattern in inquiries_patterns):
+        return "ummmmm you did well"
+
+    elif any(pattern in user_input for pattern in farewells_patterns):
+        return "your most wellcome buddy."
+
+    else:
+        return "Best of luck they are very good you should feel luck to work with them ?"
+
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == 'exit':
+        print("Chatbot: Goodbye!")
+        break
+
+    response = chatbot_response(user_input)
+    print("Chatbot:", response)
